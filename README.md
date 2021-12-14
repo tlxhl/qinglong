@@ -28,7 +28,7 @@ task <file_path> desi <env_name> <account_number>
 
 青龙配置文件，环境变量可以参考：
 这个变量还是建议从头好好看看。
-[](https://bbs.zsxwz.com/thread-4635.htm)
+[https://bbs.zsxwz.com/thread-4635.htm](https://bbs.zsxwz.com/thread-4635.htm)
 
 青龙拉取本仓库：
 ```
@@ -53,7 +53,7 @@ ql repo https://github.com/zsxwz/qinglong.git "jd_|jx_|gua_|jddj_|getJDCookie" "
 # 最后
 
 黑号不负责。
-交流群：[](https://chat.zsxwz.com/)
+交流群：[https://chat.zsxwz.com/](https://chat.zsxwz.com/)
 
 
 
