@@ -1289,7 +1289,7 @@ async function sendNotify(text, desp, params = {}, author = '\n\n本通知 By cc
         ]);
 }
 
-async function sendNotifybyWxPucher(text, desp, PtPin, author = '\n\n本通知 By ccwav Mod') {
+async function sendNotifybyWxPucher(text, desp, PtPin, author = '\n\n本通知 By https://github.com/zsxwz/qinglong') {
 
     try {
         var Uid = "";
