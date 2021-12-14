@@ -46,8 +46,10 @@ ql repo https://github.com/zsxwz/qinglong.git "jd_|jx_|gua_|jddj_|getJDCookie" "
 
 # 助力
 1. 账号间互助建议看互助研究院：@update_help，修改一下code.sh当中的repo变量为本仓库zsxwz_qinglong或者其他人的仓库。
+![code.sh](https://cdn.jsdelivr.net/gh/zsxwz/tuchuang@latest/2021/12/14/681a4362cc227ffdbf08dba8ca629bbd.png)
+
 2. 只有一个人，可以加入大佬的助力池：@JDShareCodebot
-3. 部分活动可能助力脚本作者，部分可能换成自己两个助力码，主要是为了把一些脚本的助力池换了。自己账号互助一般是满的，这个一般也助力不到头上。
+3. 部分活动可能助力脚本作者，部分可能换成自己两个助力码，主要是为了把一些脚本的助力池换了。自己账号互助一般是满的，这个一般也助力不到我头上。
 4. 多数脚本一般是先账号间互助，然后助力作者。或者ck1助力作者，其他的助力车头。具体的看脚本注释。
 
 # 最后
