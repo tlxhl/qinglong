@@ -8,19 +8,19 @@
 ```
 #拉库
 # 添加单个脚本文件
-ql raw <file_url>                                             
+ql raw <file_url>
 # 添加单个仓库的指定脚本。repo后面是：地址 白名单 黑名单 依赖 分支
-ql repo <repo_url> <whitelist> <blacklist> <dependence> <branch>   
+ql repo <repo_url> <whitelist> <blacklist> <dependence> <branch>
 
 
 #执行任务的几种方式
 # 依次执行，如果设置了随机延迟，将随机延迟一定秒数
-task <file_path>                                             
+task <file_path>
 # 依次执行，无论是否设置了随机延迟，均立即运行，前台会输出日，同时记录在日志文件中
-task <file_path> now                                         
+task <file_path> now
 # 并发执行，无论是否设置了随机延迟，均立即运行，前台不产生日，直接记录在日志文件中，且可指定账号执行
-task <file_path> conc <env_name> <account_number>(可选的) 
-# 指定账号执行，分组执行，无论是否设置了随机延迟，均立即运行 
+task <file_path> conc <env_name> <account_number>(可选的)
+# 指定账号执行，分组执行，无论是否设置了随机延迟，均立即运行
 task <file_path> desi <env_name> <account_number>
 
 #定时兑换的脚本建议设置并发执行，需要互助的不要使用并发，服务器性能差的慎用并发，消耗时间长的建议分组执行。
@@ -42,6 +42,32 @@ ql repo https://github.com/zsxwz/qinglong.git "jd_|jx_|gua_|jddj_|getJDCookie" "
 拉完库是默认运行的，但是部分脚本在一些情况下最好手动运行，或者看情况要禁用。
 部分活动需要设置变量才能正常运行或者助力。
 因此注意看脚本开头注释内容。
+
+# 依赖
+第一次运行，可能会有依赖的问题，大多数脚本的依赖都差不多，就搬运一下大佬的脚本吧。
+
+```
+#国内
+#进容器执行,手动装全部依赖:
+cd scripts
+wget -N https://raw.fastgit.org/zero205/JD_tencent_scf/main/package.json
+pnpm i
+#或在容器外:
+docker exec -it 容器名 bash -c  "cd scripts
+wget -N https://raw.fastgit.org/zero205/JD_tencent_scf/main/package.json
+pnpm i"
+
+#国外
+#进容器执行,手动装全部依赖:
+cd scripts
+wget -N https://raw.githubusercontents.com/zero205/JD_tencent_scf/main/package.json
+pnpm i
+#或在容器外:
+docker exec -it 容器名 bash -c  "cd scripts
+wget -N https://raw.githubusercontents.com/zero205/JD_tencent_scf/main/package.json
+pnpm i"
+
+```
 
 
 # 助力
