@@ -3,6 +3,8 @@
  Last Modified time: 2021-09-04 22:25:00
  Last Modified By X1a0He
  活动入口：京东APP首页-领金贴，[活动地址](https://active.jd.com/forever/cashback/index/)
+
+ cron 7 11 * * * jd_jin_tie_xh.js
  */
 const $ = new Env('领金贴');
 const notify = $.isNode() ? require('./sendNotify') : '';
