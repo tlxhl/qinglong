@@ -9,7 +9,7 @@ by:小手冰凉 tg:@chianPLA
 新手写脚本，难免有bug，能用且用。
 ============Node===============
 
-cron 10 17 6 12 * jd jd_draw.js
+cron 10 17 6 12 * jd_draw.js
  
 */
 
