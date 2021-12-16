@@ -7,7 +7,7 @@
 国内ip应该能兑换，国外的建议禁用。
 
 脚本兼容: Node.js
-cron 1 7,12,19 * * * jd_beauty_ex.js
+cron 10 8,19 * * * jd_beauty_ex.js
  */
 const $ = new Env('美丽研究院--兑换');
 const notify = $.isNode() ? require('./sendNotify') : '';
