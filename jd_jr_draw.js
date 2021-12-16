@@ -8,6 +8,8 @@ by:小手冰凉 tg:@chianPLA
 脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
 新手写脚本，难免有bug，能用且用。
 ============Node===============
+
+cron 10 17 6 12 * jd jd_draw.js
 [task_local]
 #每周领取权益活动
 10 17 6 12 * jd jd_draw.js, tag=每周领取权益活动, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jd_jr_draw.png, enabled=true
