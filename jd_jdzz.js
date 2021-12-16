@@ -9,7 +9,7 @@ date:2021-12-1 12:59:00
 ============Quantumultx===============
 [task_local]
 # 京东赚赚
-10 0 * * * jd_jdzz.js, tag=京东赚赚, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jdzz.png, enabled=true
+10 5 * * * jd_jdzz.js, tag=京东赚赚, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jdzz.png, enabled=true
  */
 const $ = new Env('京东赚赚修复版');
 const notify = $.isNode() ? require('./sendNotify') : '';
