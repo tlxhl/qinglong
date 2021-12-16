@@ -3,7 +3,7 @@
 脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
 [task_local]
 #冰雪闪耀季
-30 1,5 7-24 12 * jd_bxsyj.js, tag=冰雪闪耀季, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+42 6,13 7-24 12 * jd_bxsyj.js, tag=冰雪闪耀季, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 
  */
 const $ = new Env('冰雪闪耀季');
