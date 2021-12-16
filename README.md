@@ -33,10 +33,10 @@ task <file_path> desi <env_name> <account_number>
 青龙拉取本仓库：
 ```
 #国内：
-ql repo https://ghproxy.com/https://github.com/zsxwz/qinglong.git "jd_|jx_|gua_|jddj_|getJDCookie" "backUp" "^jd[^_]|USER|function|utils|sendnotify|ZooFaker_Necklace.js|JDJRValidator_|sign_graphics_validate|ql"
+ql repo https://ghproxy.com/https://github.com/zsxwz/qinglong.git "jd_|jx_|getJDCookie" "backUp" "^jd[^_]|USER|function|utils|sendnotify|ZooFaker_Necklace.js|JDJRValidator_|sign_graphics_validate|ql|JDSignValidator.js"
 
 #国外：
-ql repo https://github.com/zsxwz/qinglong.git "jd_|jx_|gua_|jddj_|getJDCookie" "backUp" "^jd[^_]|USER|function|utils|sendnotify|ZooFaker_Necklace.js|JDJRValidator_|sign_graphics_validate|ql"
+ql repo https://github.com/zsxwz/qinglong.git "jd_|jx_|getJDCookie" "backUp" "^jd[^_]|USER|function|utils|sendnotify|ZooFaker_Necklace.js|JDJRValidator_|sign_graphics_validate|ql|JDSignValidator.js"
 
 ```
 拉完库是默认运行的，但是部分脚本在一些情况下最好手动运行，或者看情况要禁用。
