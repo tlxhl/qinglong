@@ -3,6 +3,9 @@
  * @Date: 2021-09-04 11:50:47
  * @LastEditTime: 2021-11-10 22:30:00
  * @LastEditors: X1a0He
+
+cron 57 21 * * * jd_unsubscribe.js
+
  * @Description: 批量取关京东店铺和商品
  * @Fixed: 不再支持Qx，仅支持Node.js
  */
