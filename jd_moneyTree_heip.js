@@ -1,6 +1,6 @@
 /*
 
-0-59/30 * * * * jd_moneyTree_heip.js
+12 1-23/6 * * * jd_moneyTree_heip.js
 
 */
 const $ = new Env('京东摇钱树助力');

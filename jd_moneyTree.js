@@ -7,17 +7,17 @@
 ===============Quantumultx===============
 [task_local]
 #京东摇钱树
-3 0-23/2 * * * jd_moneyTree.js, tag=京东摇钱树, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jdyqs.png, enabled=true
+3 4-23/8 * * * jd_moneyTree.js, tag=京东摇钱树, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jdyqs.png, enabled=true
 
 ==============Loon===========
 [Script]
-cron "3 0-23/2 * * *" script-path=jd_moneyTree.js,tag=京东摇钱树
+cron "3 4-23/8 * * *" script-path=jd_moneyTree.js,tag=京东摇钱树
 
 ===============Surge===========
-京东摇钱树 = type=cron,cronexp="3 0-23/2 * * *",wake-system=1,timeout=3600,script-path=jd_moneyTree.js
+京东摇钱树 = type=cron,cronexp="3 4-23/8 * * *",wake-system=1,timeout=3600,script-path=jd_moneyTree.js
 
 ============小火箭=========
-京东摇钱树 = type=cron,script-path=jd_moneyTree.js, cronexpr="3 0-23/2 * * *", timeout=3600, enable=true
+京东摇钱树 = type=cron,script-path=jd_moneyTree.js, cronexpr="3 4-23/8 * * *", timeout=3600, enable=true
 */
 
 const $ = new Env('京东摇钱树');
