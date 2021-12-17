@@ -5,7 +5,7 @@
  * @Modified from: https://github.com/X1a0He/jd_scripts_fixed/blob/main/jd_try_xh.js
  * 
  *
- * 30 8 * * * jd_try_MyTrials.js
+ 30 8 * * * jd_try_MyTrials.js
  * 
  */ 
 const $ = new Env('京东试用待领取通知')
