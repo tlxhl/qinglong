@@ -1,6 +1,6 @@
 /*
 店铺签到，各类店铺签到，有新的店铺直接添加token即可
-30 9,16 * * * jd_ShopSign.js
+30 9,16 * * * jd_dpqd_diy.js
 */
 const $ = new Env('店铺签到');
 
