@@ -62,7 +62,7 @@ async function main() {
             if (!$.hotFlag) {
                 if ($.exchangeList) {
                     for (const vo of $.exchangeList.reverse()) {
-                        if (!vo.name.match(/红包\d*/)) {
+                        if (!vo.name.match(/券\d*/)) {
                             $.log(`去兑换：${vo.name}`)
                             await taskPost('do_exchange', `id=${vo.id}`);
                             await $.wait(3000)
