@@ -4,9 +4,6 @@
  Date：2021-11-2
  -----------------
  Update: 2021-11-17  修复任务
-
- 如果兑换不了，到京喜小程序兑换。
-
  -----------------
 先内部助力，有剩余助力作者
  cron 1 0,19,23 * * * https://raw.githubusercontent.com/ZXX2021/jd-scripts/main/jd_nnfls.js
@@ -585,4 +582,3 @@ function Env(t, e) {
         }
     }(t, e)
 }
-  
