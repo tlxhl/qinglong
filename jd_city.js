@@ -365,7 +365,7 @@ function randomString(e) {
 
 function readShareCode() {
   return new Promise(async resolve => {
-    $.get({url: `http://transfer.nz.lu/city`, 'timeout': 15000}, (err, resp, data) => {
+    $.get({url: `https://lq.d20q2.cn/jd/city.json`, 'timeout': 15000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
