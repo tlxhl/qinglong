@@ -1,7 +1,7 @@
 /*
 TG https://t.me/aaron_scriptsG
 被内鬼偷给柠檬了,大家一起玩吧
-33 0,6-23/2 * * * jd_travel.js
+33 0,6-23/2 * * * jd_zhanianshou.js
 */
 const $ = new Env('炸年兽');
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -131,7 +131,7 @@ const { getAppCookie } = (() => {
         }
         // $.joyytoken = ""
         // cookie = cookie.replace(/joyytoken=\S+?;/, "joyytoken=;") 
-        if (teamPlayerAutoTeam.hasOwnProperty($.UserName)) {
+        if (process.env.NS_JOIN != 'false' && teamPlayerAutoTeam.hasOwnProperty($.UserName)) {
             const { groupJoinInviteId, groupNum, groupName } = teamLeaderArr[teamPlayerAutoTeam[$.UserName]]
             console.log(`${groupName}人数：${groupNum}，正在去加入他的队伍...`)
             await joinTeam(groupJoinInviteId)
