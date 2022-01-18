@@ -22,6 +22,9 @@ if ($.isNode()) {
     cookiesArr.reverse();
     cookiesArr = cookiesArr.filter(item => !!item);
 }
+function nc(val1, val2) {//nullish coalescing
+  return val1 != undefined ? val1 : val2
+}
 !(async () => {
     if (!cookiesArr[0]) {
         $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
@@ -241,9 +244,9 @@ function taskPostUrl(function_id, res, body) {
         url: `https://xinrui-isv.isvjcloud.com/api/${function_id}?${res}`,
         body: JSON.stringify(body),
         headers: {
-            "t1": $.t1 ?? '',
-            "t2": $.t2 ?? '',
-            "t3": $.t3 ?? '',
+            "t1": nc($.t1, ''),
+            "t2": nc($.t2, ''),
+            "t3": nc($.t3, ''),
             "Host": "xinrui-isv.isvjcloud.com",
             "Accept": "application/json, text/plain, */*",
             "Accept-Language": "zh-cn",
@@ -266,9 +269,9 @@ function taskUrl(function_id, body) {
             "Accept-Encoding": "gzip, deflate, br",
             "Connection": "keep-alive",
             "Accept": "application/json, text/plain, */*",
-            "t1": $.t1 ?? '',
-            "t2": $.t2 ?? '',
-            "t3": $.t3 ?? '',
+            "t1": nc($.t1, ''),
+            "t2": nc($.t2, ''),
+            "t3": nc($.t3, ''),
             "User-Agent": UA,
             "Authorization": `Bearer ${$.accessToken}`,
             "Referer": "https://xinrui-isv.isvjcloud.com/year/logined_jd/",
