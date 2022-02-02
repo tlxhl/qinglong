@@ -2,8 +2,8 @@
 击鼓助力
 每人3次助力机会 助力满需要5次
 
-cron:15 10,22 31,1 1,2 *
-15 10,22 31,1 1,2 *  https://raw.githubusercontent.com/he1pu/JDHelp/main/jd_drum.js
+cron:15 10 * * *
+15 10 * * *  https://raw.githubusercontent.com/he1pu/JDHelp/main/jd_drum.js
 */
 
 
