@@ -5,17 +5,14 @@
 ===============Quantumultx===============
 [task_local]
 #众筹许愿池
-40 0,2 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_wish.js, tag=众筹许愿池, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
-
+40 0,2,19 * * * https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_wish.js, tag=众筹许愿池, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 ================Loon==============
 [Script]
-cron "40 0,2 * * *" script-path=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_wish.js,tag=众筹许愿池
-
+cron "40 0,2,19 * * *" script-path=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_wish.js,tag=众筹许愿池
 ===============Surge=================
-众筹许愿池 = type=cron,cronexp="40 0,2 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_wish.js
-
+众筹许愿池 = type=cron,cronexp="40 0,2,19 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_wish.js
 ============小火箭=========
-众筹许愿池 = type=cron,script-path=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_wish.js, cronexpr="40 0,2 * * *", timeout=3600, enable=true
+众筹许愿池 = type=cron,script-path=https://raw.githubusercontent.com/Aaron-lv/sync/jd_scripts/jd_wish.js, cronexpr="40 0,2,19 * * *", timeout=3600, enable=true
  */
 const $ = new Env('众筹许愿池');
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -25,8 +22,8 @@ let message = '', allMessage = '';
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '';
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-let appIdArr = ["1GFNRxq8","1GVFUx6g", "1E1xZy6s", "1GVJWyqg","1GFRRyqo"];
-let appNameArr = ["新年宠粉","JOY年味之旅","PLUS生活特权", "虎娃迎福","过新潮年"];
+let appIdArr = ["1EFRQwA", "1GVFUx6g", "1E1xZy6s"];
+let appNameArr = ["疯狂砸金蛋","JOY年味之旅","PLUS生活特权"];
 let appId, appName;
 $.shareCode = [];
 if ($.isNode()) {
@@ -72,18 +69,13 @@ if ($.isNode()) {
     if ($.isNode()) await notify.sendNotify($.name, allMessage);
     $.msg($.name, '', allMessage)
   }
-  let res = await getAuthorShareCode('https://raw.githubusercontent.com/Aaron-lv/updateTeam/master/shareCodes/wish.json')
+  let res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/6dylan6/updateTeam@main/shareCodes/wish.json')
   if (!res) {
-    $.http.get({url: 'https://purge.jsdelivr.net/gh/Aaron-lv/updateTeam@master/shareCodes/wish.json'}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
+    $.http.get({url: 'https://cdn.jsdelivr.net/gh/6dylan6/updateTeam@main/shareCodes/wish.json'}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
     await $.wait(1000)
-    res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/Aaron-lv/updateTeam@master/shareCodes/wish.json')
+    res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/6dylan6/updateTeam@main/shareCodes/wish.json')
   }
-  let res2 = await getAuthorShareCode('https://raw.githubusercontent.com/zero205/updateTeam/main/shareCodes/wish.json')
-  if (!res2) {
-    await $.wait(1000)
-    res2 = await getAuthorShareCode('https://raw.fastgit.org/zero205/updateTeam/main/shareCodes/wish.json')
-  }
-  $.shareCode = [...$.shareCode, ...(res || []), ...(res2 || [])]
+  $.shareCode = [...$.shareCode, ...(res || [])]
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
@@ -172,11 +164,11 @@ async function healthyDay_getHomeData(type = true) {
                       if (followShopVo.status !== 2) {
                         console.log(`【${followShopVo.shopName}】${vo.subTitleName}`)
                         await harmony_collectScore({"appId":appId,"taskToken":followShopVo.taskToken,"taskId":vo.taskId,"actionType":"0"})
-                        if ($.complete) break;
+                        if ($.complete) break;						
                       }
                     }
                   } else if (vo.taskType === 8) {
-                    $.complete = false;
+                    $.complete = false;					  
                     for (let key of Object.keys(vo.productInfoVos)) {
                       let productInfoVos = vo.productInfoVos[key]
                       if (productInfoVos.status !== 2) {
@@ -184,11 +176,11 @@ async function healthyDay_getHomeData(type = true) {
                         await harmony_collectScore({"appId":appId,"taskToken":productInfoVos.taskToken,"taskId":vo.taskId,"actionType":"1"})
                         await $.wait(vo.waitDuration * 1000)
                         await harmony_collectScore({"appId":appId,"taskToken":productInfoVos.taskToken,"taskId":vo.taskId,"actionType":"0"})
-                        if ($.complete) break;
+                        if ($.complete) break;						
                       }
                     }
                   } else if (vo.taskType === 9 || vo.taskType === 26) {
-                    $.complete = false;
+                    $.complete = false;					  
                     for (let key of Object.keys(vo.shoppingActivityVos)) {
                       let shoppingActivityVos = vo.shoppingActivityVos[key]
                       if (shoppingActivityVos.status !== 2) {
@@ -198,7 +190,7 @@ async function healthyDay_getHomeData(type = true) {
                           await $.wait(vo.waitDuration * 1000)
                         }
                         await harmony_collectScore({"appId":appId,"taskToken":shoppingActivityVos.taskToken,"taskId":vo.taskId,"actionType":"0"})
-                        if ($.complete) break;
+                        if ($.complete) break;						
                       }
                     }
                   } else if (vo.taskType === 14) {
@@ -253,7 +245,7 @@ function harmony_collectScore(body = {}, taskType = '') {
                 if (data.data.bizCode === 103) $.delcode = true
               } else {
                 console.log(body.actionType === "0" ? `完成任务失败：${data.data.bizMsg}\n` : data.data.bizMsg)
-                if (data.data.bizMsg === "任务已完成") $.complete = true;
+                if (data.data.bizMsg === "任务已完成") $.complete = true;				
               }
             }
           }
@@ -283,7 +275,7 @@ function interact_template_getLotteryResult() {
               } else if (userAwardsCacheDto.type === 0) {
                 console.log(`很遗憾未中奖~`)
               } else if (userAwardsCacheDto.type === 1) {
-                console.log(`抽中：${userAwardsCacheDto.couponVo.prizeName}，金额${userAwardsCacheDto.couponVo.usageThreshold}-${userAwardsCacheDto.couponVo.quota}，使用时间${userAwardsCacheDto.couponVo.useTimeRange}`);
+                console.log(`抽中：${userAwardsCacheDto.couponVo.prizeName}，金额${userAwardsCacheDto.couponVo.usageThreshold}-${userAwardsCacheDto.couponVo.quota}，使用时间${userAwardsCacheDto.couponVo.useTimeRange}`);				
               } else {
                 console.log(`抽中：${JSON.stringify(data)}`);
                 message += `抽中：${JSON.stringify(data)}\n`;
