@@ -6,7 +6,7 @@ export packetId="" ##你要参加砍价的邀请码
 活动地址：https://mfn.jd.com/ 京东极速版
 [task_local]
 #砍价免费拿
- 0 0 * * * jd_kanjia.js, tag=砍价免费拿, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+ 10 2 * * * jd_kanjia.js, tag=砍价免费拿, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 */
 
 
